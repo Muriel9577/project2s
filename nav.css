@@ -1,0 +1,50 @@
+﻿/* Навигация: маленькая линия под текущим пунктом и затемнение желтых кнопок */
+header nav {
+    position: relative;
+}
+
+nav ul {
+    position: relative;
+}
+
+nav li {
+    position: relative;
+}
+
+nav a {
+    position: relative;
+    padding: 4px 2px;
+    transition: color 0.2s ease;
+}
+
+/* индикатор под пунктами */
+nav .nav-indicator {
+    position: absolute;
+    bottom: -8px;
+    height: 3px;
+    width: 40px;
+    background: linear-gradient(90deg,#ffb347,#ffcc33);
+    border-radius: 3px;
+    transition: transform 0.25s cubic-bezier(.2,.8,.2,1), width 0.25s ease, left 0.25s ease;
+    will-change: left, width, transform;
+    pointer-events: none;
+}
+
+/* затемнение кнопок с желтым градиентом */
+button[class*="create"], .login, .create, .vote-trigger-btn, .how, .join-btn-active {
+    transition: filter 0.18s ease, opacity 0.18s ease;
+}
+
+    button[class*="create"]:hover, .login:hover, .create:hover, .vote-trigger-btn:hover, .how:hover, .join-btn-active:hover {
+        filter: brightness(0.9);
+    }
+
+/* активный пункт навигации - класс .active на ссылке */
+nav a.active {
+    color: #ffcc33;
+}
+
+/* небольшой отступ для корректного отображения индикатора */
+header nav {
+    padding-bottom: 12px;
+}
